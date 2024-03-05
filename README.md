@@ -10,7 +10,7 @@
 # Реализация
 Для реализации этой задачи я решил использовать библиотеки: `axios` и `cheerio` для фетчинга и парсинга сайтов. 
 ## JS 
-[text](fetchSiteToWordPress.js)
+[Решение](fetchSiteToWordPress.js)
 ## TS 
-[text](fetchSiteToWordPress.ts)
+[Решение](fetchSiteToWordPress.ts)
 
