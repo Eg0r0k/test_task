@@ -7,7 +7,7 @@ const checkSiteToWordPress = async (url: string): Promise<boolean> => {
   try {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
-    if ($(`[class*="wp-"]`).length > 0) {
+    if ($(`[class*="wp-"]`).length > 0 || $('link[href ^="wp-"]').length > 0) {
       return true;
     } else {
       return false;

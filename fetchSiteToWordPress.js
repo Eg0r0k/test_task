@@ -14,7 +14,7 @@ const checkSiteToWordPress = async (url) => {
     const { data } = axios.get(url);
     const $ = cheerio.load(data);
     //Смотрим все классы которые содержат wp-
-    if ($('[class*="wp-"]').length > 0) {
+    if ($('[class*="wp-"]').length > 0 || $('link[href ^="wp-"]').length > 0) {
       return true;
     } else {
       return false;
