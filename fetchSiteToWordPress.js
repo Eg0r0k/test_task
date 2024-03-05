@@ -50,7 +50,10 @@ const checkArrayOfSites = async (urls) => {
 
 const urlsToCheck = ["https//test.com", "https//site.ru", "https//aboba.su"];
 try {
-  console.log(await checkArrayOfSites(urlsToCheck));
+  const countSitesWordPress = await checkArrayOfSites(urlsToCheck);
+  const prosentSites =
+    Math.floor(countSitesWordPress / urlsToCheck.length) * 100;
+  console.log(`Процент сайтов написанных на WP: ${prosentSites}%`);
 } catch (error) {
   console.error("Ошиюка при проверке массива сайтов", error);
 }

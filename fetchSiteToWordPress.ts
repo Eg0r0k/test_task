@@ -2,7 +2,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 export {};
 
-//Такую же типизацию проделаем и тут. 
+//Такую же типизацию проделаем и тут.
 const checkSiteToWordPress = async (url: string): Promise<boolean> => {
   try {
     const { data } = await axios.get(url);
@@ -40,7 +40,10 @@ const urlsToCheck: Array<string> = [
   "https//aboba.su",
 ];
 try {
-  console.log(await checkArrayOfSites(urlsToCheck));
+  const countSitesWordPress: number = await checkArrayOfSites(urlsToCheck);
+  const prosentSites: number =
+    Math.floor(countSitesWordPress / urlsToCheck.length) * 100;
+  console.log(`Количество сайтов написанных на WP: ${prosentSites}%`);
 } catch (error) {
   console.error("Ошиюка при проверке массива сайтов", error);
 }
